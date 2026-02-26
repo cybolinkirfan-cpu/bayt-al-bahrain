@@ -175,14 +175,14 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 80px;
+  height: 100px;
   display: flex;
   align-items: center;
   transition: var(--transition);
 }
 
 .main-header.scrolled {
-  height: 70px;
+  height: 80px;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: var(--shadow-md);
 }
