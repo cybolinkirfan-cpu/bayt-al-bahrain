@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings | Bayt Al Bahrain</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-light">
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container-xxl">
+            <div class="d-flex justify-content-between align-items-center h-100">
+                <!-- Logo Section -->
+                <div class="d-flex align-items-center gap-3">
+                    <a href="index.html" class="d-flex align-items-center gap-3 text-decoration-none">
+                        <img src="./assets/images/logo-2.png" class="header-logo-img" width="220" alt="Bayt Al Bahrain">
+                    </a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="d-flex align-items-center gap-2 gap-md-4">
+                    <a href="index.html" class="nav-link-premium d-none d-lg-block">Home</a>
+                    <a href="about.html" class="nav-link-premium d-none d-lg-block">About</a>
+                    <a href="faq.html" class="nav-link-premium d-none d-lg-block">FAQ</a>
+
+                    <a href="login.html" class="btn btn-link nav-link-premium d-flex align-items-center gap-1 p-0">
+                        <span class="material-symbols-outlined fs-5">person</span>
+                        <span>Login</span>
+                    </a>
+
+                    <a href="post-ad.html"
+                        class="btn btn-primary d-flex align-items-center gap-2 px-4 rounded-pill shadow-premium">
+                        <span class="material-symbols-outlined fs-5">add_circle</span>
+                        <span class="d-none d-sm-inline">Post Ad</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-5 mt-5">
+        <div class="container-xxl py-4">
+            <!-- Breadcrumbs & Sort -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-5 gap-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="index.html"
+                                class="text-decoration-none text-muted">Home</a></li>
+                        <li class="breadcrumb-item active fw-bold text-secondary" aria-current="page">Properties for
+                            Rent</li>
+                    </ol>
+                </nav>
+                <div class="d-flex align-items-center gap-2 glass-effect px-3 py-2 rounded-pill">
+                    <span class="text-muted small fw-bold">Sort by:</span>
+                    <select class="form-select form-select-sm border-0 bg-transparent fw-800 text-secondary shadow-none"
+                        style="width: auto;">
+                        <option>Newest Listed</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Filters Sidebar -->
+                <aside class="col-lg-3">
+                    <div class="glass-effect p-4 rounded-4 shadow-premium sticky-top" style="top: 100px; z-index: 900;">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="h6 fw-800 mb-0 text-secondary text-uppercase tracking-wider">Filters</h4>
+                            <a href="#" class="text-primary small fw-bold text-decoration-none">Reset</a>
+                        </div>
+
+                        <!-- Category -->
+                        <div class="mb-4">
+                            <label
+                                class="form-label small fw-800 text-uppercase text-muted tracking-widest">Category</label>
+                            <select
+                                class="form-select bg-white border-0 py-2 rounded-3 shadow-sm fw-bold text-secondary">
+                                <option>Properties for Rent</option>
+                                <option>Properties for Sale</option>
+                                <option>Motors</option>
+                                <option>Jobs</option>
+                            </select>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="mb-4">
+                            <label
+                                class="form-label small fw-800 text-uppercase text-muted tracking-widest">Location</label>
+                            <div class="input-group glass-effect rounded-3 overflow-hidden">
+                                <span class="input-group-text bg-transparent border-0 pe-0">
+                                    <span class="material-symbols-outlined fs-5 text-primary">location_on</span>
+                                </span>
+                                <input type="text" class="form-control bg-transparent border-0 py-2 fw-medium"
+                                    placeholder="City or Area">
+                            </div>
+                        </div>
+
+                        <!-- Price Range -->
+                        <div class="mb-4">
+                            <label class="form-label small fw-800 text-uppercase text-muted tracking-widest">Price
+                                (BHD)</label>
+                            <div class="d-flex gap-2 align-items-center">
+                                <input type="number" class="form-control bg-white border-0 py-2 shadow-sm rounded-3"
+                                    placeholder="Min">
+                                <span class="text-muted">–</span>
+                                <input type="number" class="form-control bg-white border-0 py-2 shadow-sm rounded-3"
+                                    placeholder="Max">
+                            </div>
+                        </div>
+
+                        <!-- Specific Attributes -->
+                        <div class="mb-4">
+                            <label
+                                class="form-label small fw-800 text-uppercase text-muted tracking-widest">Bedrooms</label>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <input type="checkbox" class="btn-check" id="bed_studio" autocomplete="off">
+                                <label class="btn btn-outline-secondary btn-sm border-0 glass-effect rounded-pill px-3"
+                                    for="bed_studio">Studio</label>
+
+                                <input type="checkbox" class="btn-check" id="bed_1" autocomplete="off">
+                                <label class="btn btn-outline-secondary btn-sm border-0 glass-effect rounded-pill px-3"
+                                    for="bed_1">1</label>
+
+                                <input type="checkbox" class="btn-check" id="bed_2" autocomplete="off">
+                                <label class="btn btn-outline-secondary btn-sm border-0 glass-effect rounded-pill px-3"
+                                    for="bed_2">2</label>
+
+                                <input type="checkbox" class="btn-check" id="bed_3" autocomplete="off">
+                                <label class="btn btn-outline-secondary btn-sm border-0 glass-effect rounded-pill px-3"
+                                    for="bed_3">3+</label>
+                            </div>
+                        </div>
+
+                        <!-- Toggles -->
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" role="switch" id="photosOnly" checked>
+                            <label class="form-check-label small fw-bold text-secondary" for="photosOnly">With Photos
+                                Only</label>
+                        </div>
+                        <div class="form-check form-switch mb-4">
+                            <input class="form-check-input" type="checkbox" role="switch" id="verifiedOnly">
+                            <label class="form-check-label small fw-bold text-secondary" for="verifiedOnly">Verified
+                                Sellers</label>
+                        </div>
+
+                        <button
+                            class="btn btn-primary w-100 fw-bold rounded-pill text-white py-2 shadow-premium border-0">
+                            Apply Filters
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- Listings Grid -->
+                <div class="col-lg-9">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <!-- Listing Card 1 -->
+                        <div class="col">
+                            <a href="listing-details.html" class="text-decoration-none">
+                                <div class="listing-card h-100">
+                                    <div class="card-img-wrapper">
+                                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80"
+                                            alt="Property">
+                                        <span class="card-badge bg-primary">Featured</span>
+                                        <button class="card-fav-btn"><span
+                                                class="material-symbols-outlined fs-5 text-white">favorite</span></button>
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="card-price">BHD 850/mo</span>
+                                        <h3 class="card-title">3BHK Apartment in Juffair</h3>
+                                        <div class="card-location">
+                                            <span class="material-symbols-outlined fs-6">location_on</span>
+                                            Juffair, Manama
+                                        </div>
+                                        <div class="card-features">
+                                            <span class="feature-item"><span
+                                                    class="material-symbols-outlined fs-6">bed</span> 3 Bed</span>
+                                            <span class="feature-item"><span
+                                                    class="material-symbols-outlined fs-6">shower</span> 2 Bath</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Listing Card 2 -->
+                        <div class="col">
+                            <a href="listing-details.html" class="text-decoration-none">
+                                <div class="listing-card h-100">
+                                    <div class="card-img-wrapper">
+                                        <img src="./assets/images/intercon2.png" alt="Property">
+                                        <button class="card-fav-btn"><span
+                                                class="material-symbols-outlined fs-5 text-white">favorite</span></button>
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="card-price">BHD 145,000</span>
+                                        <h3 class="card-title">Luxury Villa in Diyar Al Muharraq</h3>
+                                        <div class="card-location">
+                                            <span class="material-symbols-outlined fs-6">location_on</span>
+                                            Muharraq
+                                        </div>
+                                        <div class="card-features">
+                                            <span class="feature-item"><span
+                                                    class="material-symbols-outlined fs-6">bed</span> 5 Bed</span>
+                                            <span class="feature-item"><span
+                                                    class="material-symbols-outlined fs-6">shower</span> 6 Bath</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Listing Card 3 -->
+                        <div class="col">
+                            <a href="listing-details.html" class="text-decoration-none">
+                                <div class="listing-card h-100">
+                                    <div class="card-img-wrapper">
+                                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80"
+                                            alt="Property">
+                                        <button class="card-fav-btn"><span
+                                                class="material-symbols-outlined fs-5 text-white">favorite</span></button>
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="card-price">BHD 320/mo</span>
+                                        <h3 class="card-title">Modern Studio in Seef District</h3>
+                                        <div class="card-location">
+                                            <span class="material-symbols-outlined fs-6">location_on</span>
+                                            Seef, Manama
+                                        </div>
+                                        <div class="card-features">
+                                            <span class="feature-item"><span
+                                                    class="material-symbols-outlined fs-6">bed</span> 1 Bed</span>
+                                            <span class="feature-item"><span
+                                                    class="material-symbols-outlined fs-6">shower</span> 1 Bath</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Listing Card 4 -->
+                        <div class="col">
+                            <a href="listing-details.html" class="text-decoration-none">
+                                <div class="listing-card h-100">
+                                    <div class="card-img-wrapper">
+                                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+                                            alt="Property">
+                                        <button class="card-fav-btn"><span
+                                                class="material-symbols-outlined fs-5 text-white">favorite</span></button>
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="card-price">BHD 550/mo</span>
+                                        <h3 class="card-title">2BHK - Reef Island View</h3>
+                                        <div class="card-location">
+                                            <span class="material-symbols-outlined fs-6">location_on</span>
+                                            Reef Island
+                                        </div>
+                                        <div class="card-features">
+                                            <span class="feature-item"><span
+                                                    class="material-symbols-outlined fs-6">bed</span> 2 Bed</span>
+                                            <span class="feature-item"><span
+                                                    class="material-symbols-outlined fs-6">shower</span> 2 Bath</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center mt-5">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination gap-3">
+                                <li class="page-item disabled">
+                                    <a class="page-link rounded-circle border-0 glass-effect p-2 d-flex align-items-center justify-content-center"
+                                        href="#" style="width: 40px; height: 40px;">
+                                        <span class="material-symbols-outlined fs-5">chevron_left</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a
+                                        class="page-link active rounded-circle border-0 bg-primary text-white p-2 d-flex align-items-center justify-content-center shadow-premium"
+                                        href="#" style="width: 40px; height: 40px;">1</a></li>
+                                <li class="page-item"><a
+                                        class="page-link rounded-circle border-0 glass-effect text-secondary p-2 d-flex align-items-center justify-content-center hover-shadow"
+                                        href="#" style="width: 40px; height: 40px;">2</a></li>
+                                <li class="page-item disabled"><span
+                                        class="page-link border-0 bg-transparent px-1">...</span></li>
+                                <li class="page-item"><a
+                                        class="page-link rounded-circle border-0 glass-effect text-secondary p-2 d-flex align-items-center justify-content-center hover-shadow"
+                                        href="#" style="width: 40px; height: 40px;">10</a></li>
+                                <li class="page-item">
+                                    <a class="page-link rounded-circle border-0 glass-effect text-secondary p-2 d-flex align-items-center justify-content-center hover-shadow"
+                                        href="#" style="width: 40px; height: 40px;">
+                                        <span class="material-symbols-outlined fs-5">chevron_right</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="pt-5 mt-5">
+        <div class="container-xxl py-5">
+            <div class="row gy-5 mb-5">
+                <!-- Brand & Description -->
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <img src="./assets/images/logo-2.png" width="220" alt="Bayt Al Bahrain">
+                    </div>
+                    <p class="text-white opacity-50 mb-4 pe-lg-5">
+                        Bahrain's most trusted marketplace. We provide a seamless experience for buying, selling, and
+                        discovering local opportunities with premium service and verified listings.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="social-btn glass-effect p-2 rounded-circle"><img src="/assets/images/igg.png"
+                                width="20" alt="Instagram"></a>
+                        <a href="#" class="social-btn glass-effect p-2 rounded-circle"><img src="/assets/images/fbb.png"
+                                width="20" alt="Facebook"></a>
+                        <a href="#" class="social-btn glass-effect p-2 rounded-circle"><img src="/assets/images/x.png"
+                                width="20" alt="Twitter"></a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white fw-800 mb-4">Marketplace</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li><a href="property-listings.html" class="footer-link">Properties</a></li>
+                        <li><a href="car-listings.html" class="footer-link">Vehicles</a></li>
+                        <li><a href="electronics-listings.html" class="footer-link">Electronics</a></li>
+                        <li><a href="job-listings.html" class="footer-link">Jobs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white fw-800 mb-4">Company</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Contact</a></li>
+                        <li><a href="#" class="footer-link">Terms</a></li>
+                        <li><a href="#" class="footer-link">Privacy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="text-white fw-800 mb-4">Stay Premium</h5>
+                    <p class="text-white opacity-50 mb-4">Subscribe to get the latest luxury listings and market
+                        insights.</p>
+                    <div class="input-group mb-3 glass-effect p-1 rounded-pill">
+                        <input type="text" class="form-control border-0 bg-transparent text-white ps-3"
+                            placeholder="Your email">
+                        <button class="btn btn-primary rounded-pill px-4">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="border-top border-white border-opacity-10 pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="mb-0 text-white opacity-50 small fw-bold text-uppercase tracking-widest">© 2026 Bayt Al
+                    Bahrain. Crafted for Excellence.</p>
+                <div class="d-flex gap-4 small fw-bold text-uppercase tracking-widest">
+                    <a href="#" class="text-white opacity-50 text-decoration-none hover-white">Support</a>
+                    <a href="#" class="text-white opacity-50 text-decoration-none hover-white">API</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

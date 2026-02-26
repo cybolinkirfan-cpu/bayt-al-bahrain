@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Hub | Bayt Al Bahrain</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-light">
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container-xxl">
+            <div class="d-flex justify-content-between align-items-center h-100">
+                <!-- Logo Section -->
+                <div class="d-flex align-items-center gap-3">
+                    <a href="index.html" class="d-flex align-items-center gap-3 text-decoration-none">
+                        <img src="./assets/images/logo-2.png" class="header-logo-img" width="220" alt="Bayt Al Bahrain">
+                    </a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="d-flex align-items-center gap-2 gap-md-4">
+                    <a href="index.html" class="nav-link-premium d-none d-lg-block">Home</a>
+                    <a href="about.html" class="nav-link-premium d-none d-lg-block">About</a>
+                    <a href="faq.html" class="nav-link-premium d-none d-lg-block">FAQ</a>
+
+                    <a href="login.html"
+                        class="btn btn-link nav-link-premium d-flex align-items-center gap-1 p-0 text-decoration-none">
+                        <span class="material-symbols-outlined fs-5">person</span>
+                        <span>Login</span>
+                    </a>
+
+                    <a href="post-ad.html"
+                        class="btn btn-primary d-flex align-items-center gap-2 px-4 rounded-pill shadow-premium">
+                        <span class="material-symbols-outlined fs-5">add_circle</span>
+                        <span class="d-none d-sm-inline">Post Ad</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mt-5 pt-4">
+        <div class="container-xxl py-5">
+            <!-- Breadcrumbs & Sort -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-5 gap-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="index.html"
+                                class="text-decoration-none text-muted">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Marketplace</a>
+                        </li>
+                        <li class="breadcrumb-item active text-primary fw-800" aria-current="page">Electronics</li>
+                    </ol>
+                </nav>
+                <div class="d-flex align-items-center gap-3">
+                    <span class="text-muted small fw-800 text-uppercase tracking-widest">Sort by:</span>
+                    <select
+                        class="form-select form-select-sm glass-effect border-0 fw-bold text-secondary shadow-sm rounded-3 py-2 px-4"
+                        style="width: auto;">
+                        <option>Newest Listed</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row g-5">
+                <!-- Filters Sidebar -->
+                <div class="col-lg-3">
+                    <div class="glass-effect p-4 rounded-4 shadow-premium sticky-top" style="top: 100px; z-index: 900;">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="h6 fw-800 mb-0 text-secondary text-uppercase tracking-widest">Filters</h4>
+                            <a href="#"
+                                class="text-primary small fw-800 text-decoration-none text-uppercase tracking-widest">Reset</a>
+                        </div>
+
+                        <!-- Category -->
+                        <div class="mb-4">
+                            <label class="form-label small fw-800 text-muted text-uppercase tracking-widest ms-1"
+                                style="font-size: 0.65rem;">Sub-Category</label>
+                            <select
+                                class="form-select glass-effect border-0 fw-bold text-secondary shadow-sm rounded-3 py-2">
+                                <option>All Electronics</option>
+                                <option>Mobile Phones</option>
+                                <option>Computers & Laptops</option>
+                                <option>Home Appliances</option>
+                                <option>Gaming & Consoles</option>
+                            </select>
+                        </div>
+
+                        <!-- Brand Search -->
+                        <div class="mb-4">
+                            <label class="form-label small fw-800 text-muted text-uppercase tracking-widest ms-1"
+                                style="font-size: 0.65rem;">Brand</label>
+                            <div class="input-group glass-effect rounded-3 overflow-hidden">
+                                <span class="input-group-text bg-transparent border-0"><span
+                                        class="material-symbols-outlined fs-6 text-muted">search</span></span>
+                                <input type="text" class="form-control border-0 bg-transparent fw-bold text-secondary"
+                                    placeholder="Search brand...">
+                            </div>
+                        </div>
+
+                        <!-- Price Range -->
+                        <div class="mb-4">
+                            <label class="form-label small fw-800 text-muted text-uppercase tracking-widest ms-1"
+                                style="font-size: 0.65rem;">Price (BHD)</label>
+                            <div class="d-flex gap-2 align-items-center">
+                                <input type="number"
+                                    class="form-control glass-effect border-0 fw-bold text-secondary shadow-sm rounded-3"
+                                    placeholder="Min">
+                                <span class="text-muted opacity-50">/</span>
+                                <input type="number"
+                                    class="form-control glass-effect border-0 fw-bold text-secondary shadow-sm rounded-3"
+                                    placeholder="Max">
+                            </div>
+                        </div>
+
+                        <!-- Condition -->
+                        <div class="mb-4">
+                            <label class="form-label small fw-800 text-muted text-uppercase tracking-widest ms-1"
+                                style="font-size: 0.65rem;">Condition</label>
+                            <div class="d-flex flex-column gap-2 mt-1">
+                                <div class="form-check">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="condNew">
+                                    <label class="form-check-label small fw-bold text-secondary" for="condNew">New /
+                                        Sealed</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input border-secondary" type="checkbox" id="condLikeNew">
+                                    <label class="form-check-label small fw-bold text-secondary" for="condLikeNew">Used
+                                        - Like New</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="btn btn-primary w-100 fw-800 rounded-pill text-white shadow-premium mt-2 py-2 text-uppercase tracking-widest"
+                            style="font-size: 0.75rem;">Apply Filters</button>
+                    </div>
+                </div>
+
+                <!-- Listings Grid -->
+                <div class="col-lg-9">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <!-- Electronic Card 1 -->
+                        <div class="col">
+                            <a href="listing-details.html" class="text-decoration-none">
+                                <div class="listing-card h-100">
+                                    <div class="card-img-wrapper">
+                                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80"
+                                            alt="iPhone 15 Pro">
+                                        <span class="card-badge bg-primary">Featured</span>
+                                        <button class="card-fav-btn"><span
+                                                class="material-symbols-outlined fs-5 text-white">favorite</span></button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="card-price mb-0">BHD 380</span>
+                                        </div>
+                                        <h3 class="card-title">iPhone 15 Pro Max - 256GB</h3>
+                                        <div class="card-location mb-3">
+                                            <span class="material-symbols-outlined fs-6">location_on</span>
+                                            Seef, Manama
+                                        </div>
+                                        <div class="card-features border-top pt-3 d-flex gap-2">
+                                            <span class="badge glass-effect text-secondary border-0 fw-800 py-1 px-2"
+                                                style="font-size: 0.6rem;">NEW</span>
+                                            <span class="badge glass-effect text-secondary border-0 fw-800 py-1 px-2"
+                                                style="font-size: 0.6rem;">WARRANTY</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Electronic Card 2 -->
+                        <div class="col">
+                            <a href="listing-details.html" class="text-decoration-none">
+                                <div class="listing-card h-100">
+                                    <div class="card-img-wrapper">
+                                        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80"
+                                            alt="MacBook Pro">
+                                        <button class="card-fav-btn"><span
+                                                class="material-symbols-outlined fs-5 text-white">favorite</span></button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="card-price mb-0">BHD 520</span>
+                                        </div>
+                                        <h3 class="card-title">MacBook Pro M2 14" - 16GB</h3>
+                                        <div class="card-location mb-3">
+                                            <span class="material-symbols-outlined fs-6">location_on</span>
+                                            Juffair, Manama
+                                        </div>
+                                        <div class="card-features border-top pt-3 d-flex gap-2">
+                                            <span class="badge glass-effect text-secondary border-0 fw-800 py-1 px-2"
+                                                style="font-size: 0.6rem;">LIKE NEW</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Electronic Card 3 -->
+                        <div class="col">
+                            <a href="listing-details.html" class="text-decoration-none">
+                                <div class="listing-card h-100">
+                                    <div class="card-img-wrapper">
+                                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80"
+                                            alt="Gaming Console">
+                                        <button class="card-fav-btn"><span
+                                                class="material-symbols-outlined fs-5 text-white">favorite</span></button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="card-price mb-0">BHD 165</span>
+                                        </div>
+                                        <h3 class="card-title">PlayStation 5 Disc Edition</h3>
+                                        <div class="card-location mb-3">
+                                            <span class="material-symbols-outlined fs-6">location_on</span>
+                                            Riffa
+                                        </div>
+                                        <div class="card-features border-top pt-3 d-flex gap-2">
+                                            <span class="badge glass-effect text-secondary border-0 fw-800 py-1 px-2"
+                                                style="font-size: 0.6rem;">USED</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Electronic Card 4 -->
+                        <div class="col">
+                            <a href="listing-details.html" class="text-decoration-none">
+                                <div class="listing-card h-100">
+                                    <div class="card-img-wrapper">
+                                        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80"
+                                            alt="Sony Camera">
+                                        <button class="card-fav-btn"><span
+                                                class="material-symbols-outlined fs-5 text-white">favorite</span></button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="card-price mb-0">BHD 240</span>
+                                        </div>
+                                        <h3 class="card-title">Sony A6400 Mirrorless Camera</h3>
+                                        <div class="card-location mb-3">
+                                            <span class="material-symbols-outlined fs-6">location_on</span>
+                                            Manama
+                                        </div>
+                                        <div class="card-features border-top pt-3 d-flex gap-2">
+                                            <span class="badge glass-effect text-secondary border-0 fw-800 py-1 px-2"
+                                                style="font-size: 0.6rem;">GOOD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Electronic Card 5 -->
+                        <div class="col">
+                            <a href="listing-details.html" class="text-decoration-none">
+                                <div class="listing-card h-100">
+                                    <div class="card-img-wrapper">
+                                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80"
+                                            alt="Headphones">
+                                        <button class="card-fav-btn"><span
+                                                class="material-symbols-outlined fs-5 text-white">favorite</span></button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="card-price mb-0">BHD 85</span>
+                                        </div>
+                                        <h3 class="card-title">Bose QuietComfort 45</h3>
+                                        <div class="card-location mb-3">
+                                            <span class="material-symbols-outlined fs-6">location_on</span>
+                                            Amwaj Islands
+                                        </div>
+                                        <div class="card-features border-top pt-3 d-flex gap-2">
+                                            <span class="badge glass-effect text-secondary border-0 fw-800 py-1 px-2"
+                                                style="font-size: 0.6rem;">SEALED</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Electronic Card 6 -->
+                        <div class="col">
+                            <a href="listing-details.html" class="text-decoration-none">
+                                <div class="listing-card h-100">
+                                    <div class="card-img-wrapper">
+                                        <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80"
+                                            alt="Smart TV">
+                                        <button class="card-fav-btn"><span
+                                                class="material-symbols-outlined fs-5 text-white">favorite</span></button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="card-price mb-0">BHD 195</span>
+                                        </div>
+                                        <h3 class="card-title">Samsung 65" Crystal UHD 4K</h3>
+                                        <div class="card-location mb-3">
+                                            <span class="material-symbols-outlined fs-6">location_on</span>
+                                            Saar
+                                        </div>
+                                        <div class="card-features border-top pt-3 d-flex gap-2">
+                                            <span class="badge glass-effect text-secondary border-0 fw-800 py-1 px-2"
+                                                style="font-size: 0.6rem;">BRAND NEW</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="d-flex justify-content-center mt-5 py-4">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination gap-3">
+                                <li class="page-item disabled">
+                                    <a class="page-link rounded-circle border-0 glass-effect p-2 d-flex align-items-center justify-content-center"
+                                        href="#" style="width: 40px; height: 40px;">
+                                        <span class="material-symbols-outlined fs-5">chevron_left</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a
+                                        class="page-link active rounded-circle border-0 bg-primary text-white p-2 d-flex align-items-center justify-content-center shadow-premium"
+                                        href="#" style="width: 40px; height: 40px;">1</a></li>
+                                <li class="page-item"><a
+                                        class="page-link rounded-circle border-0 glass-effect text-secondary p-2 d-flex align-items-center justify-content-center hover-shadow"
+                                        href="#" style="width: 40px; height: 40px;">2</a></li>
+                                <li class="page-item disabled"><span
+                                        class="page-link border-0 bg-transparent px-1">...</span></li>
+                                <li class="page-item"><a
+                                        class="page-link rounded-circle border-0 glass-effect text-secondary p-2 d-flex align-items-center justify-content-center hover-shadow"
+                                        href="#" style="width: 40px; height: 40px;">10</a></li>
+                                <li class="page-item">
+                                    <a class="page-link rounded-circle border-0 glass-effect text-secondary p-2 d-flex align-items-center justify-content-center hover-shadow"
+                                        href="#" style="width: 40px; height: 40px;">
+                                        <span class="material-symbols-outlined fs-5">chevron_right</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="pt-5 mt-5">
+        <div class="container-xxl py-5">
+            <div class="row gy-5 mb-5">
+                <!-- Brand & Description -->
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <img src="./assets/images/logo-2.png" width="220" alt="Bayt Al Bahrain">
+                    </div>
+                    <p class="text-white opacity-50 mb-4 pe-lg-5">
+                        Bahrain's most trusted marketplace. We provide a seamless experience for buying, selling, and
+                        discovering local opportunities with premium service and verified listings.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="social-btn glass-effect p-2 rounded-circle"><img
+                                src="./assets/images/igg.png" width="20" alt="Instagram"></a>
+                        <a href="#" class="social-btn glass-effect p-2 rounded-circle"><img
+                                src="./assets/images/fbb.png" width="20" alt="Facebook"></a>
+                        <a href="#" class="social-btn glass-effect p-2 rounded-circle"><img src="./assets/images/x.png"
+                                width="20" alt="Twitter"></a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white fw-800 mb-4 text-uppercase tracking-widest" style="font-size: 0.9rem;">
+                        Marketplace</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li><a href="property-listings.html" class="footer-link-premium">Properties</a></li>
+                        <li><a href="car-listings.html" class="footer-link-premium">Vehicles</a></li>
+                        <li><a href="electronics-listings.html" class="footer-link-premium">Electronics</a></li>
+                        <li><a href="job-listings.html" class="footer-link-premium">Jobs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white fw-800 mb-4 text-uppercase tracking-widest" style="font-size: 0.9rem;">Company
+                    </h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li><a href="#" class="footer-link-premium">About Us</a></li>
+                        <li><a href="#" class="footer-link-premium">Contact</a></li>
+                        <li><a href="#" class="footer-link-premium">Terms</a></li>
+                        <li><a href="#" class="footer-link-premium">Privacy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="text-white fw-800 mb-4 text-uppercase tracking-widest" style="font-size: 0.9rem;">Stay
+                        Premium</h5>
+                    <p class="text-white opacity-50 mb-4">Subscribe to get the latest luxury listings and market
+                        insights.</p>
+                    <div class="input-group mb-3 glass-effect p-1 rounded-pill">
+                        <input type="text" class="form-control border-0 bg-transparent text-white ps-3"
+                            placeholder="Your email">
+                        <button class="btn btn-primary rounded-pill px-4 fw-800">JOIN</button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="border-top border-white border-opacity-10 pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="mb-0 text-white opacity-50 small fw-bold text-uppercase tracking-widest"
+                    style="font-size: 0.65rem;">© 2026 Bayt Al Bahrain. Crafted for Excellence.</p>
+                <div class="d-flex gap-4 small fw-bold text-uppercase tracking-widest" style="font-size: 0.65rem;">
+                    <a href="#" class="text-white opacity-50 text-decoration-none hover-white">Support</a>
+                    <a href="#" class="text-white opacity-50 text-decoration-none hover-white">API</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

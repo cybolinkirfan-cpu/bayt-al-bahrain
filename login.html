@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Elite | Bayt Al Bahrain</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0e0e0e 0%, #230000 100%) !important;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .auth-container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .nav-pills .nav-link {
+            color: rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .nav-pills .nav-link.active {
+            background: var(--brand-red) !important;
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header (Simplified) -->
+    <header class="py-4">
+        <div class="container-xxl">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html">
+                    <img src="./assets/images/logo-2.png" width="220" alt="Bayt Al Bahrain">
+                </a>
+                <a href="index.html" class="nav-link-premium d-flex align-items-center gap-2">
+                    <span class="material-symbols-outlined fs-5">arrow_back</span>
+                    <span>BACK TO HOME</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="auth-container">
+        <div class="auth-card">
+            <div class="glass-effect p-4 p-md-5 rounded-4 shadow-premium border border-white border-opacity-10">
+                <div class="text-center mb-5">
+                    <h1 class="h3 fw-800 text-white mb-2 text-uppercase tracking-widest">Welcome Back</h1>
+                    <p class="text-white opacity-50 small fw-bold">EXPERIENCE PREMIER MARKETPLACE ACCESS</p>
+                </div>
+
+                <!-- Tabs -->
+                <ul class="nav nav-pills nav-fill mb-5 glass-effect p-1 rounded-pill" id="authTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active rounded-pill fw-800 py-2 text-uppercase tracking-widest small"
+                            id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button"
+                            role="tab">Login</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill fw-800 py-2 text-uppercase tracking-widest small"
+                            id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button"
+                            role="tab">Register</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="authTabsContent">
+                    <!-- Login Form -->
+                    <div class="tab-pane fade show active" id="login" role="tabpanel">
+                        <form action="dashboard.html">
+                            <div class="mb-4">
+                                <label
+                                    class="form-label small fw-800 text-white opacity-50 text-uppercase tracking-widest ms-1">Email
+                                    Address</label>
+                                <div
+                                    class="input-group glass-effect rounded-3 overflow-hidden border border-white border-opacity-10">
+                                    <span class="input-group-text bg-transparent border-0 pe-0"><span
+                                            class="material-symbols-outlined fs-5 text-primary">mail</span></span>
+                                    <input type="email"
+                                        class="form-control border-0 bg-transparent fw-bold text-white py-2"
+                                        placeholder="name@premium.com">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label
+                                    class="form-label small fw-800 text-white opacity-50 text-uppercase tracking-widest ms-1">Password</label>
+                                <div
+                                    class="input-group glass-effect rounded-3 overflow-hidden border border-white border-opacity-10">
+                                    <span class="input-group-text bg-transparent border-0 pe-0"><span
+                                            class="material-symbols-outlined fs-5 text-primary">lock</span></span>
+                                    <input type="password"
+                                        class="form-control border-0 bg-transparent fw-bold text-white py-2"
+                                        placeholder="••••••••">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-5">
+                                <div class="form-check">
+                                    <input class="form-check-input border-secondary bg-transparent" type="checkbox"
+                                        id="remember">
+                                    <label class="form-check-label small fw-bold text-white opacity-50"
+                                        for="remember">Keep me signed in</label>
+                                </div>
+                                <a href="#"
+                                    class="small text-primary fw-800 text-decoration-none text-uppercase tracking-widest"
+                                    style="font-size: 0.65rem;">Reset Password</a>
+                            </div>
+                            <button type="submit"
+                                class="btn btn-primary w-100 fw-800 py-3 rounded-pill shadow-premium text-uppercase tracking-widest">Sign
+                                In</button>
+                        </form>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div class="tab-pane fade" id="register" role="tabpanel">
+                        <form action="dashboard.html">
+                            <div class="row g-3 mb-4">
+                                <div class="col-6">
+                                    <label
+                                        class="form-label small fw-800 text-white opacity-50 text-uppercase tracking-widest ms-1">First
+                                        Name</label>
+                                    <input type="text"
+                                        class="form-control glass-effect border-0 fw-bold text-white py-2 rounded-3"
+                                        placeholder="John">
+                                </div>
+                                <div class="col-6">
+                                    <label
+                                        class="form-label small fw-800 text-white opacity-50 text-uppercase tracking-widest ms-1">Last
+                                        Name</label>
+                                    <input type="text"
+                                        class="form-control glass-effect border-0 fw-bold text-white py-2 rounded-3"
+                                        placeholder="Doe">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label
+                                    class="form-label small fw-800 text-white opacity-50 text-uppercase tracking-widest ms-1">Email
+                                    Address</label>
+                                <input type="email"
+                                    class="form-control glass-effect border-0 fw-bold text-white py-2 rounded-3"
+                                    placeholder="email@premium.com">
+                            </div>
+                            <div class="mb-4">
+                                <label
+                                    class="form-label small fw-800 text-white opacity-50 text-uppercase tracking-widest ms-1">Create
+                                    Password</label>
+                                <input type="password"
+                                    class="form-control glass-effect border-0 fw-bold text-white py-2 rounded-3"
+                                    placeholder="••••••••">
+                            </div>
+                            <button type="submit"
+                                class="btn btn-primary w-100 fw-800 py-3 rounded-pill shadow-premium text-uppercase tracking-widest mb-4">Create
+                                Account</button>
+                            <p class="text-center small text-white opacity-50 fw-bold text-uppercase tracking-widest"
+                                style="font-size: 0.6rem; line-height: 1.5;">
+                                By joining, you agree to our <a href="#" class="text-primary text-decoration-none">Terms
+                                    of Excellence</a> & <a href="#" class="text-primary text-decoration-none">Privacy
+                                    Charter</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Simplified) -->
+    <footer class="py-4">
+        <div class="container text-center">
+            <p class="mb-0 text-white opacity-50 small fw-bold text-uppercase tracking-widest"
+                style="font-size: 0.65rem;">© 2026 Bayt Al Bahrain. The Standard of Luxury.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

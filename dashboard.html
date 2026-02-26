@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Bayt Al Bahrain</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        body {
+            background-color: #f8fafc;
+        }
+
+        .sidebar-wrapper {
+            width: 280px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .main-wrapper {
+            margin-left: 280px;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link-dashboard {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            color: rgba(0, 0, 0, 0.6);
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .nav-link-dashboard:hover,
+        .nav-link-dashboard.active {
+            background: rgba(220, 38, 38, 0.05);
+            color: var(--brand-red);
+        }
+
+        .dashboard-stat-card {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 991.98px) {
+            .sidebar-wrapper {
+                margin-left: -280px;
+            }
+
+            .sidebar-wrapper.show {
+                margin-left: 0;
+            }
+
+            .main-wrapper {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <aside
+            class="sidebar-wrapper glass-effect border-end border-white border-opacity-10 py-5 px-4 d-flex flex-column">
+            <div class="mb-5 px-2">
+                <a href="index.html">
+                    <img src="./assets/images/logo-2.png" width="200" alt="Bayt Al Bahrain">
+                </a>
+            </div>
+
+            <nav class="flex-grow-1">
+                <div class="small fw-800 text-muted text-uppercase tracking-widest mb-4 px-2"
+                    style="font-size: 0.65rem; opacity: 0.5;">Management</div>
+                <ul class="nav flex-column gap-2 mb-5">
+                    <li><a href="dashboard.html" class="nav-link-dashboard active"><span
+                                class="material-symbols-outlined">dashboard</span> Dashboard</a></li>
+                    <li><a href="#" class="nav-link-dashboard"><span class="material-symbols-outlined">list_alt</span>
+                            My Listings</a></li>
+                    <li><a href="#" class="nav-link-dashboard"><span class="material-symbols-outlined">favorite</span>
+                            Saved Ads</a></li>
+                    <li><a href="#" class="nav-link-dashboard"><span class="material-symbols-outlined">chat</span>
+                            Messages <span class="badge bg-primary ms-auto rounded-pill px-2">3</span></a></li>
+                </ul>
+
+                <div class="small fw-800 text-muted text-uppercase tracking-widest mb-4 px-2"
+                    style="font-size: 0.65rem; opacity: 0.5;">Account</div>
+                <ul class="nav flex-column gap-2">
+                    <li><a href="#" class="nav-link-dashboard"><span class="material-symbols-outlined">settings</span>
+                            Profile Settings</a></li>
+                    <li><a href="index.html" class="nav-link-dashboard text-danger"><span
+                                class="material-symbols-outlined">logout</span> Sign Out</a></li>
+                </ul>
+            </nav>
+
+            <div class="mt-auto px-2">
+                <div
+                    class="glass-effect p-3 rounded-4 d-flex align-items-center gap-3 border border-white border-opacity-10">
+                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-800"
+                        style="width: 40px; height: 40px;">JS</div>
+                    <div class="overflow-hidden">
+                        <p class="mb-0 fw-800 text-secondary small text-truncate">John Smith</p>
+                        <p class="mb-0 text-muted smaller fw-bold opacity-50 text-truncate">Premium Seller</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-wrapper flex-grow-1">
+            <!-- Header Nav -->
+            <header class="bg-white border-bottom sticky-top py-4 px-4 px-lg-5" style="z-index: 900;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="btn btn-link p-0 text-secondary d-lg-none"
+                            onclick="document.querySelector('.sidebar-wrapper').classList.toggle('show')">
+                            <span class="material-symbols-outlined fs-2">menu</span>
+                        </button>
+                        <h1 class="h4 fw-800 text-secondary mb-0 text-uppercase tracking-widest">Dashboard Overview</h1>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="d-none d-sm-flex align-items-center gap-2">
+                            <span class="material-symbols-outlined text-success fs-5">verified</span>
+                            <span class="small fw-800 text-muted text-uppercase tracking-widest"
+                                style="font-size: 0.65rem;">Account Verified</span>
+                        </div>
+                        <a href="post-ad.html"
+                            class="btn btn-primary fw-800 px-4 py-2 rounded-pill shadow-premium d-flex align-items-center gap-2 text-uppercase tracking-widest"
+                            style="font-size: 0.75rem;">
+                            <span class="material-symbols-outlined fs-5">add</span> Post Now
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-4 p-lg-5">
+                <!-- Stats Grid -->
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4">
+                        <div class="dashboard-stat-card">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <span class="material-symbols-outlined fs-1 text-primary">visibility</span>
+                                <span
+                                    class="badge bg-success bg-opacity-10 text-success fw-800 rounded-pill px-3 py-2">+24%</span>
+                            </div>
+                            <h3 class="h1 fw-800 text-secondary mb-1">12.5k</h3>
+                            <p class="text-muted small fw-800 text-uppercase tracking-widest mb-0 opacity-50">Global
+                                Reach / Impressions</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dashboard-stat-card">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <span class="material-symbols-outlined fs-1 text-primary">campaign</span>
+                                <span class="small fw-800 text-muted text-uppercase tracking-widest opacity-50">Active
+                                    Listings</span>
+                            </div>
+                            <h3 class="h1 fw-800 text-secondary mb-1">08</h3>
+                            <p class="text-muted small fw-800 text-uppercase tracking-widest mb-0 opacity-50">Live on
+                                Marketplace</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dashboard-stat-card">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <span class="material-symbols-outlined fs-1 text-primary">stars</span>
+                                <span class="small fw-800 text-muted text-uppercase tracking-widest opacity-50">Premium
+                                    Store</span>
+                            </div>
+                            <h3 class="h1 fw-800 text-secondary mb-1">Silver</h3>
+                            <p class="text-muted small fw-800 text-uppercase tracking-widest mb-0 opacity-50">Membership
+                                Status</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Table -->
+                <div
+                    class="glass-effect rounded-4 shadow-premium border border-white border-opacity-10 overflow-hidden">
+                    <div
+                        class="p-4 border-bottom border-secondary border-opacity-10 d-flex justify-content-between align-items-center bg-white bg-opacity-50">
+                        <h3 class="h6 fw-800 text-secondary mb-0 text-uppercase tracking-widest">Active Inventory</h3>
+                        <a href="#"
+                            class="text-primary fw-800 small text-decoration-none text-uppercase tracking-widest"
+                            style="font-size: 0.65rem;">View Complete Market</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="bg-light bg-opacity-50">
+                                <tr>
+                                    <th
+                                        class="ps-4 py-3 border-0 small fw-800 text-muted text-uppercase tracking-widest">
+                                        Asset Details</th>
+                                    <th class="py-3 border-0 small fw-800 text-muted text-uppercase tracking-widest">
+                                        Category</th>
+                                    <th class="py-3 border-0 small fw-800 text-muted text-uppercase tracking-widest">
+                                        Engagement</th>
+                                    <th class="py-3 border-0 small fw-800 text-muted text-uppercase tracking-widest">
+                                        Status</th>
+                                    <th class="pe-4 py-3 border-0 text-end"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ps-4 py-4">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="rounded-3 overflow-hidden shadow-sm"
+                                                style="width: 50px; height: 50px;">
+                                                <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=100&q=80"
+                                                    class="w-100 h-100 object-fit-cover">
+                                            </div>
+                                            <div>
+                                                <p class="mb-0 fw-800 text-secondary small">3BHK Apartment in Juffair
+                                                </p>
+                                                <p class="mb-0 smaller text-muted fw-bold opacity-50">BHD 850/mo</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span class="badge glass-effect text-muted border-0 fw-800 smaller">REAL
+                                            ESTATE</span></td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="fw-800 text-secondary small">1,204</span>
+                                            <span class="material-symbols-outlined fs-6 text-primary">visibility</span>
+                                        </div>
+                                    </td>
+                                    <td><span
+                                            class="badge bg-success bg-opacity-10 text-success fw-800 rounded-pill px-3 py-1 smaller shadow-sm">LIVE</span>
+                                    </td>
+                                    <td class="pe-4 text-end">
+                                        <button
+                                            class="btn glass-effect p-2 rounded-circle border-0 text-muted hover-shadow"><span
+                                                class="material-symbols-outlined fs-5">more_horiz</span></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ps-4 py-4">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="rounded-3 overflow-hidden shadow-sm"
+                                                style="width: 50px; height: 50px;">
+                                                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=100&q=80"
+                                                    class="w-100 h-100 object-fit-cover">
+                                            </div>
+                                            <div>
+                                                <p class="mb-0 fw-800 text-secondary small">Lexus IS350 F-Sport</p>
+                                                <p class="mb-0 smaller text-muted fw-bold opacity-50">BHD 12,500</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span
+                                            class="badge glass-effect text-muted border-0 fw-800 smaller">MOTORS</span>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-2">
+                                            <span class="fw-800 text-secondary small">856</span>
+                                            <span class="material-symbols-outlined fs-6 text-primary">visibility</span>
+                                        </div>
+                                    </td>
+                                    <td><span
+                                            class="badge bg-warning bg-opacity-10 text-warning fw-800 rounded-pill px-3 py-1 smaller shadow-sm">REVIEW</span>
+                                    </td>
+                                    <td class="pe-4 text-end">
+                                        <button
+                                            class="btn glass-effect p-2 rounded-circle border-0 text-muted hover-shadow"><span
+                                                class="material-symbols-outlined fs-5">more_horiz</span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
