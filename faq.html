@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | Bayt Al Bahrain</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .faq-hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1454165833767-027ffea9e51b?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .faq-search-box {
+            max-width: 600px;
+            margin-inline: auto;
+            background: white;
+            border-radius: 9999px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .faq-search-box input {
+            border: none;
+            padding: 10px 20px;
+            width: 100%;
+            border-radius: 9999px;
+            font-size: 1rem;
+            color: var(--secondary);
+        }
+
+        .faq-search-box input:focus {
+            outline: none;
+        }
+
+        .faq-category-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            height: 100%;
+        }
+
+        .faq-category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .faq-category-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-glow);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+
+        .accordion-item {
+            border: 1px solid var(--border-light);
+            border-radius: 15px !important;
+            margin-bottom: 15px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .accordion-button {
+            padding: 20px 25px;
+            font-weight: 700;
+            color: var(--secondary);
+            background: white;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: white;
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .accordion-button::after {
+            background-size: 1.25rem;
+        }
+
+        .accordion-body {
+            padding: 0 25px 25px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .help-banner {
+            background: var(--secondary);
+            border-radius: 30px;
+            padding: 60px;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .help-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 40%;
+            height: 200%;
+            background: linear-gradient(45deg, var(--primary-glow), transparent);
+            transform: rotate(15deg);
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container-xxl">
+            <div class="d-flex justify-content-between align-items-center h-100">
+                <!-- Logo Section -->
+                <div class="d-flex align-items-center gap-3">
+                    <a href="index.html" class="d-flex align-items-center gap-3 text-decoration-none">
+                        <img src="./assets/images/logo.png" class="header-logo-img" width="220" alt="Bayt Al Bahrain">
+                    </a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="d-flex align-items-center gap-2 gap-md-4">
+                    <a href="index.html" class="nav-link-premium d-none d-lg-block">Home</a>
+                    <a href="about.html" class="nav-link-premium d-none d-lg-block">About</a>
+                    <a href="faq.html" class="nav-link-premium d-none d-lg-block active">FAQ</a>
+                    <a href="contact.html" class="nav-link-premium d-none d-lg-block">Contact</a>
+
+                    <a href="#" class="btn btn-link nav-link-premium d-flex align-items-center gap-1 p-0">
+                        <span class="material-symbols-outlined fs-5">person</span>
+                        <span>Login</span>
+                    </a>
+
+                    <a href="post-ad.html"
+                        class="btn btn-primary d-flex align-items-center gap-2 px-4 rounded-pill shadow-premium text-decoration-none">
+                        <span class="material-symbols-outlined fs-5">add_circle</span>
+                        <span class="d-none d-sm-inline">Post Ad</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="faq-hero">
+            <div class="container-xxl">
+                <h1 class="display-4 fw-semibold text-white mb-4">How can we <span class="text-gradient">help you?</span></h1>
+                <div class="faq-search-box mb-4">
+                    <span class="material-symbols-outlined text-muted ms-3">search</span>
+                    <input type="text" placeholder="Search for answers (e.g., 'Verification', 'Ad limit')...">
+                    <button class="btn btn-primary rounded-pill px-4 mx-1">Search</button>
+                </div>
+                <div class="d-flex justify-content-center gap-3 opacity-75 small">
+                    <span>Popular:</span>
+                    <a href="#selling" class="text-white text-decoration-none border-bottom">Posting Ads</a>
+                    <a href="#account" class="text-white text-decoration-none border-bottom">Account Setup</a>
+                    <a href="#safety" class="text-white text-decoration-none border-bottom">Safety Tips</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="border-bottom bg-white py-5">
+            <div class="container-xxl">
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <a href="#general" class="faq-category-card">
+                            <div class="faq-category-icon">
+                                <span class="material-symbols-outlined">info</span>
+                            </div>
+                            <h3 class="h6 fw-bold mb-1 text-secondary">General</h3>
+                            <p class="small text-muted mb-0">Basic platform info</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#buying" class="faq-category-card">
+                            <div class="faq-category-icon">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                            </div>
+                            <h3 class="h6 fw-bold mb-1 text-secondary">Buying</h3>
+                            <p class="small text-muted mb-0">Finding & contacting</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#selling" class="faq-category-card">
+                            <div class="faq-category-icon">
+                                <span class="material-symbols-outlined">sell</span>
+                            </div>
+                            <h3 class="h6 fw-bold mb-1 text-secondary">Selling</h3>
+                            <p class="small text-muted mb-0">Post & boost ads</p>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#safety" class="faq-category-card">
+                            <div class="faq-category-icon">
+                                <span class="material-symbols-outlined">verified_user</span>
+                            </div>
+                            <h3 class="h6 fw-bold mb-1 text-secondary">Safety</h3>
+                            <p class="small text-muted mb-0">Trust & security</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Content Section -->
+        <section class="py-5">
+            <div class="container-xxl py-4">
+                <div class="row g-5">
+                    <!-- Sidebar Navigation -->
+                    <div class="col-lg-3 d-none d-lg-block">
+                        <div class="sticky-top" style="top: 120px;">
+                            <h5 class="fw-bold mb-4">Categories</h5>
+                            <nav class="nav flex-column gap-2">
+                                <a class="nav-link p-0 text-primary fw-bold" href="#general">General Questions</a>
+                                <a class="nav-link p-0 text-secondary" href="#buying">Buying on Platform</a>
+                                <a class="nav-link p-0 text-secondary" href="#selling">Selling Guide</a>
+                                <a class="nav-link p-0 text-secondary" href="#account">Account & Security</a>
+                                <a class="nav-link p-0 text-secondary" href="#safety">Safety & Verification</a>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Accordions -->
+                    <div class="col-lg-9">
+                        <!-- General -->
+                        <div id="general" class="mb-5">
+                            <h2 class="h4 fw-800 text-secondary mb-4 pb-2 border-bottom">General Questions</h2>
+                            <div class="accordion accordion-flush" id="generalAccordion">
+                                <div class="accordion-item shadow-sm">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#q1">
+                                            What is Bayt Al Bahrain?
+                                        </button>
+                                    </h2>
+                                    <div id="q1" class="accordion-collapse collapse show"
+                                        data-bs-parent="#generalAccordion">
+                                        <div class="accordion-body">
+                                            Bayt Al Bahrain is the Kingdom's leading premium classifieds marketplace. We
+                                            provide a secure and efficient platform for buying and selling property,
+                                            vehicles, electronics, jobs, and services across Bahrain.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item shadow-sm">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#q2">
+                                            Is it free to use the platform?
+                                        </button>
+                                    </h2>
+                                    <div id="q2" class="accordion-collapse collapse" data-bs-parent="#generalAccordion">
+                                        <div class="accordion-body">
+                                            Yes, browsing and basic ad posting are completely free. We also offer
+                                            premium boosting options for sellers who want to increase their visibility
+                                            and reach a larger audience quickly.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Selling -->
+                        <div id="selling" class="mb-5">
+                            <h2 class="h4 fw-800 text-secondary mb-4 pb-2 border-bottom">Selling Guide</h2>
+                            <div class="accordion accordion-flush" id="sellingAccordion">
+                                <div class="accordion-item shadow-sm">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#sq1">
+                                            How do I post a new ad?
+                                        </button>
+                                    </h2>
+                                    <div id="sq1" class="accordion-collapse collapse"
+                                        data-bs-parent="#sellingAccordion">
+                                        <div class="accordion-body">
+                                            Simply click the "Post Ad" button in the header, select your category, add
+                                            details and high-quality photos, and your ad will be live after a quick
+                                            verification process.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item shadow-sm">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#sq2">
+                                            What are Premium Listings?
+                                        </button>
+                                    </h2>
+                                    <div id="sq2" class="accordion-collapse collapse"
+                                        data-bs-parent="#sellingAccordion">
+                                        <div class="accordion-body">
+                                            Premium Listings appear at the top of search results and category pages,
+                                            ensuring maximum exposure. They typically receive 10x more views than
+                                            standard ads.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Safety -->
+                        <div id="safety" class="mb-5">
+                            <h2 class="h4 fw-800 text-secondary mb-4 pb-2 border-bottom">Safety & Verification</h2>
+                            <div class="accordion accordion-flush" id="safetyAccordion">
+                                <div class="accordion-item shadow-sm">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#saq1">
+                                            How can I stay safe while buying?
+                                        </button>
+                                    </h2>
+                                    <div id="saq1" class="accordion-collapse collapse"
+                                        data-bs-parent="#safetyAccordion">
+                                        <div class="accordion-body">
+                                            Always meet in public places, inspect items before paying, and never share
+                                            personal financial info. Look for "Verified Seller" badges for added
+                                            confidence.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item shadow-sm">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#saq2">
+                                            How do I report a suspicious ad?
+                                        </button>
+                                    </h2>
+                                    <div id="saq2" class="accordion-collapse collapse"
+                                        data-bs-parent="#safetyAccordion">
+                                        <div class="accordion-body">
+                                            Use the "Report" button on the ad details page. Our moderation team reviews
+                                            all reports within 24 hours to keep the platform safe.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Help Banner -->
+                        <div class="help-banner shadow-premium">
+                            <h2 class="h2 fw-800 mb-3">Still need help?</h2>
+                            <p class="opacity-75 fs-5 mb-4">Our dedicated support team is available 24/7 to assist you
+                                with any questions.</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a href="contact.html" class="btn btn-primary px-5 py-3 rounded-pill h6 mb-0">Contact
+                                    Support</a>
+                                <a href="#" class="btn btn-outline-light px-5 py-3 rounded-pill h6 mb-0">Live Chat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="pt-5 mt-5">
+        <div class="container-xxl py-2">
+            <div class="row gy-5 mb-5">
+                <!-- Brand & Description -->
+                <div class="col-lg-4">
+                    <div class="mb-2">
+                        <img src="./assets/images/logo-w.png" width="220" alt="Bayt Al Bahrain">
+                    </div>
+                    <p class="text-white opacity-50 mb-4 pe-lg-5">
+                        Bahrain's most trusted marketplace. We provide a seamless experience for buying, selling, and
+                        discovering local opportunities with premium service and verified listings.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="social-btn glass-effect p-2 rounded-circle"><img
+                                src="/assets/images/instagram.png" width="25" alt="Instagram"></a>
+                        <a href="#" class="social-btn glass-effect p-2 rounded-circle"><img
+                                src="/assets/images/facebook.png" width="25" alt="Facebook"></a>
+                        <a href="#" class="social-btn glass-effect p-2 rounded-circle"><img
+                                src="/assets/images/twitter.png" width="25" alt="Twitter"></a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white fw-800 mb-4 mt-4">Marketplace</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li><a href="property-listings.html" class="footer-link">Properties</a></li>
+                        <li><a href="car-listings.html" class="footer-link">Vehicles</a></li>
+                        <li><a href="electronics-listings.html" class="footer-link">Electronics</a></li>
+                        <li><a href="job-listings.html" class="footer-link">Jobs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white fw-800 mb-4 mt-4">Company</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="text-white fw-800 mb-4 mt-4">Stay Premium</h5>
+                    <p class="text-white opacity-50 mb-4">Subscribe to get the latest luxury listings and market
+                        insights.</p>
+                    <div class="input-group mb-3 glass-effect p-1 rounded-pill">
+                        <input type="text" class="form-control border-0 bg-transparent text-white ps-3"
+                            placeholder="Your email">
+                        <button class="btn btn-primary rounded-pill px-4">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="border-top border-white border-opacity-10 pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="mb-0 text-white opacity-50 small fw-bold text-uppercase tracking-widest">© 2026 Bayt Al
+                    Bahrain.</p>
+                <!-- <div class="d-flex gap-4 small fw-bold text-uppercase tracking-widest">
+                    <a href="#" class="text-white opacity-50 text-decoration-none hover-white">Support</a>
+                    <a href="#" class="text-white opacity-50 text-decoration-none hover-white">API</a>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
